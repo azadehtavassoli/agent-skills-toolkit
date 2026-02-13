@@ -1,0 +1,27 @@
+name: backend_fastapi
+
+include:
+  # Core
+  - skills/core/00_GLOBAL_ENGINEERING_RULES.md
+  - skills/core/01_VERSIONING_POLICY.md
+  - skills/core/02_TESTING_POLICY.md
+  - skills/core/03_SECURITY_AND_PROMPT_INJECTION.md
+  - skills/core/04_REVIEW_CHECKLIST.md
+  - skills/core/05_CODING_STYLE_AND_COMMENTS.md
+
+  # FastAPI backend skills
+  - skills/backend/fastapi/40_FASTAPI_LAYERING.md
+  - skills/backend/fastapi/41_PYDANTIC_MODELS_AND_VALIDATION.md
+  - skills/backend/fastapi/42_ERROR_RESPONSES_AND_LOGGING.md
+  - skills/backend/fastapi/43_SETTINGS_AND_ENVIRONMENT.md
+
+templates:
+  # FastAPI app skeleton
+  - templates/code/python/fastapi/SKELETON_app.py
+  - templates/code/python/fastapi/PATTERN_routes.py
+  - templates/code/python/fastapi/PATTERN_services.py
+  - templates/code/python/fastapi/PATTERN_schemas.py
+  - templates/code/python/fastapi/PATTERN_exceptions.py
+  - templates/code/python/fastapi/PATTERN_settings.py
+  - templates/code/python/fastapi/PATTERN_logging.py
+  - templates/code/python/fastapi/SKELETON_tests_fastapi.py
