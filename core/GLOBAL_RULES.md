@@ -1,17 +1,25 @@
-# Global Rules
+# GLOBAL RULES
 
-These rules are deterministic and apply to all topic and framework assets in this repository.
+## Deterministic Execution
+- All agent workflows MUST be deterministic for identical inputs, configuration, and seeded randomness.
+- Any nondeterministic behavior MUST be explicitly controlled and documented.
 
-## Deterministic engineering requirements
-1. Default behavior MUST be deterministic and reproducible.
-2. Optional non-deterministic features (such as LLM interpretation) MUST be opt-in and clearly isolated.
-3. All interfaces SHOULD define typed inputs and outputs.
-4. All new templates MUST cite and follow:
-   - `core/LOGGING_STANDARD.md`
-   - `core/TESTING_STANDARD.md`
-   - `core/STRUCTURED_OUTPUT_STANDARD.md`
+## No Hidden LLM Calls
+- All LLM invocations MUST be explicit in code paths and configuration.
+- Implicit provider calls, telemetry prompts, or hidden retries are prohibited.
 
-## Governance requirements
-- Document topic capabilities in a compliance checklist before implementation templates.
-- Keep framework instructions aligned to topic-level hard rules.
-- Validate requirements through tests and contract checks.
+## Explicit Tool Routing
+- Tool selection MUST be observable and logged per step.
+- Routing policy MUST be defined in code and testable.
+
+## No Silent Fallbacks
+- Silent fallback behavior is prohibited.
+- Fallbacks MUST be explicit, logged, and surfaced in outputs.
+
+## Explicit Memory Handling
+- Memory use MUST be declared, bounded, and serialized through typed schemas.
+- Memory read/write operations MUST be auditable.
+
+## Framework-Agnostic Shared Logic
+- Shared topic logic MUST NOT depend on a single framework runtime.
+- Framework-specific behavior MUST be isolated in adapter/framework folders.

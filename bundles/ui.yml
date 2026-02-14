@@ -1,0 +1,18 @@
+name: ui
+
+include:
+  - core/GLOBAL_RULES.md
+  - core/LOGGING_STANDARD.md
+  - core/TESTING_STANDARD.md
+  - core/STRUCTURED_OUTPUT_STANDARD.md
+  - core/VERSIONING_POLICY.md
+  - topics/ui/SKILL.md
+  - topics/ui/INSTRUCTIONS.md
+  - topics/ui/50_UI_BLUEPRINT.md
+  - topics/ui/51_COMPONENT_DECOMPOSITION.md
+  - topics/ui/52_ACCESSIBILITY_A11Y.md
+
+templates:
+  - topics/ui/frameworks/streamlit/templates/PATTERN_chat_layout.py
+  - topics/ui/frameworks/streamlit/templates/PATTERN_upload_panel.py
+  - topics/ui/frameworks/gradio/templates/SKELETON_gradio_app.py

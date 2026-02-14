@@ -1,8 +1,14 @@
-# Roadmap
+# ROADMAP
 
-## Document Intelligence expansion
-- Add Azure Cognitive Vision-based document understanding adapters.
-- Add provider-neutral OCR abstraction templates.
-- Add multi-provider document classification contracts.
-- Add richer table extraction and citation-ready markdown post-processing.
-- Add evaluation harness for markdown fidelity and structure quality.
+## Planned Topic Expansions
+- [ ] Observability topic
+- [ ] Evaluation topic
+- [ ] Middleware topic
+- [ ] Multi-agent orchestration topic
+- [ ] Policy engine topic
+- [ ] Security and guardrails topic
+
+## Additional Backlog
+- [ ] Cross-framework conformance test harness
+- [ ] Topic-level semantic version manifest
+- [ ] Adapter capability matrix generation

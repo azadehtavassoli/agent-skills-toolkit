@@ -1,10 +1,12 @@
-# Structured Output Standard
+# STRUCTURED OUTPUT STANDARD
 
-## Pydantic requirement
-1. Structured outputs MUST use `pydantic.BaseModel`.
-2. Public conversion interfaces MUST return typed models, not unstructured dictionaries.
-3. Metadata fields MUST be explicit and documented.
+## Core Requirements
+- All structured outputs MUST use Pydantic `BaseModel` definitions.
+- Raw `dict` outputs are prohibited for public interfaces.
+- Schema validation is mandatory at boundaries.
+- Models MUST be explicitly named, versioned when needed, and documented.
 
-## Validation guidance
-- Validate all required fields at model boundaries.
-- Keep output shapes stable for downstream automation.
+## Enforcement
+- Framework adapters MUST expose typed request and response models.
+- Parsing failures MUST return explicit typed errors.
+- Tests MUST validate successful and failing schema paths.

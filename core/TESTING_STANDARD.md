@@ -1,13 +1,19 @@
-# Testing Standard
+# TESTING STANDARD
 
-## Deterministic tests
-1. Tests MUST NOT call real LLM providers.
-2. External SDK/network calls MUST be replaced with fakes, stubs, or monkeypatched doubles.
-3. Deterministic/default mode MUST be tested separately from optional LLM mode.
-4. Contract tests MUST assert output structure and key fields.
+## Deterministic Test Policy
+- Tests MUST produce deterministic outcomes in CI.
+- Randomness MUST be seeded and controlled.
 
-## Topic framework test checklist
-- Binary stream conversion path is covered.
-- Default mode avoids LLM dependencies.
-- Optional LLM mode is explicit and stubbed.
-- Debug logging setup is exercised where relevant.
+## LLM Isolation
+- Tests MUST use `GenericFakeChatModel` or deterministic stubs/mocks.
+- Real API keys, network provider calls, and live LLM invocations are prohibited in automated tests.
+
+## Required Coverage
+- Tool routing tests are mandatory.
+- Structured output validation tests are mandatory.
+- RAG groundedness tests are mandatory for retrieval topics.
+- Logging verification tests are mandatory for agent/runtime components.
+
+## Assertions
+- Tests MUST assert typed schema conformance.
+- Tests MUST assert explicit failure behavior (no silent fallback).

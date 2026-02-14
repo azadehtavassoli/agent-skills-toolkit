@@ -1,0 +1,17 @@
+name: agentic
+
+include:
+  - core/GLOBAL_RULES.md
+  - core/LOGGING_STANDARD.md
+  - core/TESTING_STANDARD.md
+  - core/STRUCTURED_OUTPUT_STANDARD.md
+  - core/VERSIONING_POLICY.md
+  - topics/agent/SKILL.md
+  - topics/agent/INSTRUCTIONS.md
+  - topics/agent/compliance/REQUIRED_CAPABILITIES.md
+
+templates:
+  - topics/agent/shared/routing_policy.py
+  - topics/agent/shared/structured_models.py
+  - topics/agent/shared/logging_adapter.py
+  - topics/agent/frameworks/langchain/templates/SKELETON_langchain_agent.py
