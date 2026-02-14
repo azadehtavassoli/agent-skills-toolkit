@@ -1,0 +1,19 @@
+name: rag
+
+include:
+  - core/GLOBAL_RULES.md
+  - core/LOGGING_STANDARD.md
+  - core/TESTING_STANDARD.md
+  - core/STRUCTURED_OUTPUT_STANDARD.md
+  - core/VERSIONING_POLICY.md
+  - topics/rag/SKILL.md
+  - topics/rag/INSTRUCTIONS.md
+  - topics/rag/20_RAG_BASELINE.md
+  - topics/rag/21_CHUNKING_STRATEGY.md
+  - topics/rag/22_CITATIONS_AND_GROUNDEDNESS.md
+  - topics/rag/23_RAG_EVALUATION.md
+
+templates:
+  - topics/rag/shared/PATTERN_rag_chain_lcel.py
+  - topics/rag/shared/PATTERN_citations_formatter.py
+  - topics/rag/shared/rag_evaluation_pipeline.py
