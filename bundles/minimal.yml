@@ -1,0 +1,7 @@
+name: minimal
+
+include:
+  - core/GLOBAL_RULES.md
+  - core/LOGGING_STANDARD.md
+  - core/TESTING_STANDARD.md
+  - core/STRUCTURED_OUTPUT_STANDARD.md
