@@ -1,37 +1,96 @@
-from pydantic import BaseModel, Field
+"""LangChain agent skeleton using create_agent + Pydantic structured output + debug rotating file logs."""
+
+from __future__ import annotations
+
+import json
+import logging
+import time
+import uuid
+from logging.handlers import RotatingFileHandler
+from pathlib import Path
+from typing import Any
+
 from langchain.agents import create_agent
+from langchain_core.tools import tool
+from pydantic import BaseModel, Field
 
-# 1) Define structured response schema
-class SearchResult(BaseModel):
-    query: str = Field(description="Executed search query")
-    top_docs: list[str] = Field(description="Top relevant document snippets")
 
-# 2) Define tools (simple example)
+class AgentInput(BaseModel):
+    user_query: str = Field(..., description="User question")
+
+
+class AgentOutput(BaseModel):
+    answer: str = Field(..., description="Final answer")
+    tool_used: str | None = Field(default=None, description="Tool used if any")
+
+
+class SearchArgs(BaseModel):
+    query: str = Field(..., description="Search query")
+
+
+@tool(args_schema=SearchArgs)
 def dummy_search(query: str) -> str:
-    """
-    Sample tool that pretends to search data.
-    """
-    return f"Results for: {query}"
+    """Search an internal corpus (stub)."""
+    return f"top result for: {query}"
 
-tools = [
-    {
-        "name": "dummy_search",
-        "description": "Search for relevant documents.",
-        "parameters_schema": {"query": str},
-        "func": dummy_search,
-    }
-]
 
-# 3) Create agent with schema
-agent = create_agent(
-    model="openai/gpt-4o-mini",            # model (provider dependent)
-    tools=tools,
-    system_prompt="Helpful agent that uses tools responsibly",
-    response_format=SearchResult,          # structured output
-)
+def build_logger(
+    logger_name: str = "langchain_agent",
+    log_file: str = "logs/langchain_agent.log",
+    max_bytes: int = 10 * 1024 * 1024,
+    backup_count: int = 5,
+) -> logging.Logger:
+    Path(log_file).parent.mkdir(parents=True, exist_ok=True)
+    logger = logging.getLogger(logger_name)
+    logger.setLevel(logging.DEBUG)
+    logger.handlers.clear()
 
-# 4) Run the agent
-if __name__ == "__main__":
-    result = agent.invoke({"query": "climate change impact"})
-    structured_data = result.structured_response
-    print(structured_data.json())
+    handler = RotatingFileHandler(log_file, maxBytes=max_bytes, backupCount=backup_count)
+    handler.setLevel(logging.DEBUG)
+    handler.setFormatter(logging.Formatter('%(message)s'))
+    logger.addHandler(handler)
+    return logger
+
+
+def log_event(logger: logging.Logger, **payload: Any) -> None:
+    logger.debug(json.dumps(payload, ensure_ascii=False))
+
+
+def run_agent(agent_input: AgentInput) -> AgentOutput:
+    request_id = str(uuid.uuid4())
+    logger = build_logger()
+
+    agent = create_agent(
+        model="openai:gpt-4o-mini",
+        tools=[dummy_search],
+        system_prompt="You are a precise assistant. Always return structured output.",
+        response_format=AgentOutput,
+    )
+
+    start = time.perf_counter()
+    log_event(
+        logger,
+        timestamp=time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+        request_id=request_id,
+        agent_type="create_agent",
+        operation="invoke_start",
+        status="pending",
+        input=agent_input.model_dump(),
+    )
+
+    result = agent.invoke({"messages": [{"role": "user", "content": agent_input.user_query}]})
+    structured = result["structured_response"]
+    duration_ms = int((time.perf_counter() - start) * 1000)
+
+    log_event(
+        logger,
+        timestamp=time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+        request_id=request_id,
+        agent_type="create_agent",
+        operation="invoke_complete",
+        status="success",
+        duration_ms=duration_ms,
+        output=structured.model_dump(),
+    )
+
+    return structured
