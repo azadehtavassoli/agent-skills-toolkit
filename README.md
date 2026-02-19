@@ -1,14 +1,23 @@
 # agent-skills-toolkit
-A versioned, reusable skill and template library for AI pair-programming agents (Copilot, ChatGPT, Claude). Enforces architecture, guardrails, and modern patterns for agentic, RAG, and backend systems.
+A versioned, reusable skill and template library for AI pair-programming agents (Copilot, ChatGPT, Claude). Enforces architecture, guardrails, and modern patterns for agentic, RAG, backend, UI, and document-intelligence systems.
 
 ## Instruction overlays
 - `instructions/COPILOT_LANGCHAIN_HARD_RULES.md`: hard rules to pin modern LangChain (`create_agent`), enforce Pydantic I/O, debug rotating file logs, and mock-only tests.
+- `instructions/TABLE_OF_CONTENTS.md`: human-readable discovery index for topics, instructions, frameworks, and templates.
+- `instructions/TOC.yaml`: machine-readable discovery index for automated instruction routing.
 - `templates/prompts/copilot/COPILOT_INSTRUCTIONS_BASE.md`: base instructions snippet to copy into project-level Copilot instructions.
 
-## Topic registry
-- Core engineering rules (`skills/core/*`)
-- Agents (`skills/agents/*`)
-- Backend FastAPI (`skills/backend/fastapi/*`)
-- RAG (`skills/rag/*`)
-- Frontend (`skills/frontend/*`)
-- **Document Intelligence** (`topics/document_intelligence/*`) for binary-stream document-to-markdown conversion with deterministic defaults and optional visual mode.
+## Repository structure
+- `core/`: global engineering standards (logging, testing, structured output, governance rules).
+- `topics/<topic>/`: topic-level skills and instructions.
+- `topics/<topic>/frameworks/<framework>/`: framework-specific skills/templates/tests.
+- `topics/<topic>/shared/`: framework-agnostic patterns and templates.
+- `templates/`: portable prompt and code snippets.
+- `bundles/`: curated starter bundles.
+
+## Main topics
+- Agents: `topics/agent/`
+- RAG: `topics/rag/`
+- FastAPI: `topics/fastapi/`
+- UI: `topics/ui/`
+- Document Intelligence: `topics/document_intelligence/`

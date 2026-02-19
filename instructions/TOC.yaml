@@ -1,0 +1,73 @@
+version: 1
+entrypoint:
+  - core/GLOBAL_RULES.md
+  - core/LOGGING_STANDARD.md
+  - core/TESTING_STANDARD.md
+  - core/STRUCTURED_OUTPUT_STANDARD.md
+  - instructions/COPILOT_LANGCHAIN_HARD_RULES.md
+
+topics:
+  agent:
+    skill: topics/agent/SKILL.md
+    instructions: topics/agent/INSTRUCTIONS.md
+    frameworks:
+      langchain:
+        root: topics/agent/frameworks/langchain
+        skills:
+          - topics/agent/frameworks/langchain/30_LANGCHAIN_AGENT_FRAMEWORK.md
+          - topics/agent/frameworks/langchain/31_LANGCHAIN_TOOL_CALLING_PATTERNS.md
+          - topics/agent/frameworks/langchain/32_LANGCHAIN_MEMORY_AND_EVALUATION.md
+          - topics/agent/frameworks/langchain/33_LANGCHAIN_MIDDLEWARE_AND_CONTROL.md
+          - topics/agent/frameworks/langchain/34_LANGCHAIN_STRUCTURED_OUTPUT_AND_PROMPTS.md
+          - topics/agent/frameworks/langchain/35_LANGCHAIN_MULTI_AGENT_AND_ORCHESTRATION.md
+          - topics/agent/frameworks/langchain/36_LANGCHAIN_LOGGING.md
+        templates: topics/agent/frameworks/langchain/templates
+        tests: topics/agent/frameworks/langchain/tests
+      google_adk:
+        root: topics/agent/frameworks/google-adk
+        templates: topics/agent/frameworks/google-adk/templates
+        tests: topics/agent/frameworks/google-adk/tests
+
+  rag:
+    skill: topics/rag/SKILL.md
+    instructions: topics/rag/INSTRUCTIONS.md
+    shared:
+      - topics/rag/20_RAG_BASELINE.md
+      - topics/rag/21_CHUNKING_STRATEGY.md
+      - topics/rag/22_CITATIONS_AND_GROUNDEDNESS.md
+      - topics/rag/23_RAG_EVALUATION.md
+    templates: topics/rag/shared
+
+  fastapi:
+    skill: topics/fastapi/SKILL.md
+    instructions: topics/fastapi/INSTRUCTIONS.md
+    skills:
+      - topics/fastapi/40_FASTAPI_LAYERING.md
+      - topics/fastapi/41_PYDANTIC_MODELS_AND_VALIDATION.md
+      - topics/fastapi/42_ERROR_RESPONSES_AND_LOGGING.md
+      - topics/fastapi/43_SETTINGS_AND_ENVIRONMENT.md
+    templates: topics/fastapi/templates
+
+  ui:
+    skill: topics/ui/SKILL.md
+    instructions: topics/ui/INSTRUCTIONS.md
+    skills:
+      - topics/ui/50_UI_BLUEPRINT.md
+      - topics/ui/51_COMPONENT_DECOMPOSITION.md
+      - topics/ui/52_ACCESSIBILITY_A11Y.md
+    frameworks:
+      streamlit:
+        templates: topics/ui/frameworks/streamlit/templates
+        tests: topics/ui/frameworks/streamlit/tests
+      gradio:
+        templates: topics/ui/frameworks/gradio/templates
+        tests: topics/ui/frameworks/gradio/tests
+
+  document_intelligence:
+    skill: topics/document_intelligence/SKILL.md
+    instructions: topics/document_intelligence/INSTRUCTIONS.md
+    frameworks:
+      markitdown:
+        root: topics/document_intelligence/frameworks/markitdown
+        templates: topics/document_intelligence/frameworks/markitdown/templates
+        tests: topics/document_intelligence/frameworks/markitdown/tests

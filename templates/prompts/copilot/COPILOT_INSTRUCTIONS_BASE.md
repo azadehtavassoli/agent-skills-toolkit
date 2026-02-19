@@ -15,8 +15,12 @@ Use these defaults for all repositories that adopt `agent-skills-toolkit`.
 - Tool definitions via `@tool` and/or Pydantic `args_schema`
 - `response_format=YourSchema` for deterministic structured output
 
+## Discovery Entry Point
+- `instructions/TABLE_OF_CONTENTS.md`
+- `instructions/TOC.yaml`
+
 ## References
 - `instructions/COPILOT_LANGCHAIN_HARD_RULES.md`
-- `skills/langchain/30_LANGCHAIN_AGENT_FRAMEWORK.md`
-- `skills/langchain/34_LANGCHAIN_STRUCTURED_OUTPUT_AND_PROMPTS.md.md`
-- `skills/langchain/36_LANGCHAIN_LOGGING.md`
+- `topics/agent/frameworks/langchain/30_LANGCHAIN_AGENT_FRAMEWORK.md`
+- `topics/agent/frameworks/langchain/34_LANGCHAIN_STRUCTURED_OUTPUT_AND_PROMPTS.md`
+- `topics/agent/frameworks/langchain/36_LANGCHAIN_LOGGING.md`
