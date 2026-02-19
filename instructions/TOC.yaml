@@ -71,3 +71,28 @@ topics:
         root: topics/document_intelligence/frameworks/markitdown
         templates: topics/document_intelligence/frameworks/markitdown/templates
         tests: topics/document_intelligence/frameworks/markitdown/tests
+
+  mcp:
+    skill: topics/mcp/SKILL.md
+    instructions: topics/mcp/INSTRUCTIONS.md
+    skills:
+      - topics/mcp/60_MCP_SERVER_IMPLEMENTATION.md
+      - topics/mcp/61_MCP_SERVER_USAGE_PATTERNS.md
+    templates: topics/mcp/templates
+    tests: topics/mcp/tests
+
+  a2a_server:
+    skill: topics/a2a_server/SKILL.md
+    instructions: topics/a2a_server/INSTRUCTIONS.md
+    skills:
+      - topics/a2a_server/70_A2A_SERVER_IMPLEMENTATION.md
+    templates: topics/a2a_server/templates
+    tests: topics/a2a_server/tests
+
+  a2a_client:
+    skill: topics/a2a_client/SKILL.md
+    instructions: topics/a2a_client/INSTRUCTIONS.md
+    skills:
+      - topics/a2a_client/80_A2A_CLIENT_IMPLEMENTATION.md
+    templates: topics/a2a_client/templates
+    tests: topics/a2a_client/tests

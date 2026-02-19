@@ -15,6 +15,9 @@ Use this file as the single entrypoint for topic and framework discovery.
 - FastAPI: `topics/fastapi/SKILL.md`
 - UI: `topics/ui/SKILL.md`
 - Document Intelligence: `topics/document_intelligence/SKILL.md`
+- MCP: `topics/mcp/SKILL.md`
+- A2A Server: `topics/a2a_server/SKILL.md`
+- A2A Client: `topics/a2a_client/SKILL.md`
 
 ## 3) Topic Instructions
 - Agents: `topics/agent/INSTRUCTIONS.md`
@@ -22,6 +25,9 @@ Use this file as the single entrypoint for topic and framework discovery.
 - FastAPI: `topics/fastapi/INSTRUCTIONS.md`
 - UI: `topics/ui/INSTRUCTIONS.md`
 - Document Intelligence: `topics/document_intelligence/INSTRUCTIONS.md`
+- MCP: `topics/mcp/INSTRUCTIONS.md`
+- A2A Server: `topics/a2a_server/INSTRUCTIONS.md`
+- A2A Client: `topics/a2a_client/INSTRUCTIONS.md`
 
 ## 4) Framework Drilldown
 - LangChain: `topics/agent/frameworks/langchain/`
@@ -35,11 +41,17 @@ Use this file as the single entrypoint for topic and framework discovery.
 - RAG templates: `topics/rag/shared/`
 - FastAPI templates: `topics/fastapi/templates/`
 - Prompt templates: `topics/<topic>/prompts/`
+- MCP templates: `topics/mcp/templates/`
+- A2A server templates: `topics/a2a_server/templates/`
+- A2A client templates: `topics/a2a_client/templates/`
 
 ## 6) Testing Templates
 - LangChain tests: `topics/agent/frameworks/langchain/tests/`
 - RAG tests: `topics/rag/shared/`
 - Framework test plans: `topics/*/frameworks/*/tests/`
+- MCP test plans: `topics/mcp/tests/`
+- A2A server test plans: `topics/a2a_server/tests/`
+- A2A client test plans: `topics/a2a_client/tests/`
 
 ## 7) Machine-Readable Index
 - `instructions/TOC.yaml`

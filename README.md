@@ -21,3 +21,6 @@ A versioned, reusable skill and template library for AI pair-programming agents 
 - FastAPI: `topics/fastapi/`
 - UI: `topics/ui/`
 - Document Intelligence: `topics/document_intelligence/`
+- MCP: `topics/mcp/`
+- A2A Server: `topics/a2a_server/`
+- A2A Client: `topics/a2a_client/`

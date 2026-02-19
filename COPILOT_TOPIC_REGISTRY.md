@@ -40,3 +40,21 @@ Use `instructions/TABLE_OF_CONTENTS.md` as the entrypoint.
 - Instructions: `topics/document_intelligence/INSTRUCTIONS.md`
 - Framework:
   - MarkItDown: `topics/document_intelligence/frameworks/markitdown/`
+
+### MCP
+- Skill: `topics/mcp/SKILL.md`
+- Instructions: `topics/mcp/INSTRUCTIONS.md`
+- Templates: `topics/mcp/templates/`
+- Tests: `topics/mcp/tests/`
+
+### A2A Server
+- Skill: `topics/a2a_server/SKILL.md`
+- Instructions: `topics/a2a_server/INSTRUCTIONS.md`
+- Templates: `topics/a2a_server/templates/`
+- Tests: `topics/a2a_server/tests/`
+
+### A2A Client
+- Skill: `topics/a2a_client/SKILL.md`
+- Instructions: `topics/a2a_client/INSTRUCTIONS.md`
+- Templates: `topics/a2a_client/templates/`
+- Tests: `topics/a2a_client/tests/`
