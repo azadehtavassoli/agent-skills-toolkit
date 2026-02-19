@@ -34,7 +34,7 @@ Use this file as the single entrypoint for topic and framework discovery.
 - Agent templates: `topics/agent/frameworks/langchain/templates/`
 - RAG templates: `topics/rag/shared/`
 - FastAPI templates: `topics/fastapi/templates/`
-- Prompt templates: `templates/prompts/`
+- Prompt templates: `topics/<topic>/prompts/`
 
 ## 6) Testing Templates
 - LangChain tests: `topics/agent/frameworks/langchain/tests/`

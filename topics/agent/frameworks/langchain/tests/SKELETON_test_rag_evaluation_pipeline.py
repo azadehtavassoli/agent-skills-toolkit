@@ -1,6 +1,6 @@
 from langchain_core.language_models.fake_chat_models import GenericFakeChatModel
 
-from templates.code.python.rag.rag_evaluation_pipeline import (
+from topics.rag.shared.rag_evaluation_pipeline import (
     EvaluationSample,
     run_rag_evaluation,
 )
