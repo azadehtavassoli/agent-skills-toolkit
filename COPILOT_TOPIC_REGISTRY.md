@@ -7,7 +7,8 @@ Use `instructions/TABLE_OF_CONTENTS.md` as the entrypoint.
 - `core/LOGGING_STANDARD.md`
 - `core/TESTING_STANDARD.md`
 - `core/STRUCTURED_OUTPUT_STANDARD.md`
-- `instructions/COPILOT_LANGCHAIN_HARD_RULES.md`
+ - `topics/agent/frameworks/langchain/COPILOT_LANGCHAIN_HARD_RULES.md`
+ - `core/CODE_READABILITY.md`
 
 ## Topics
 
