@@ -11,6 +11,7 @@ Use this file as the single entrypoint for topic and framework discovery.
 
 ## 2) Topic Discovery
 - Agents: `topics/agent/SKILL.md`
+- LangGraph: `topics/langraph/SKILL.md`
 - RAG: `topics/rag/SKILL.md`
 - FastAPI: `topics/fastapi/SKILL.md`
 - UI: `topics/ui/SKILL.md`
@@ -21,6 +22,7 @@ Use this file as the single entrypoint for topic and framework discovery.
 
 ## 3) Topic Instructions
 - Agents: `topics/agent/INSTRUCTIONS.md`
+- LangGraph: `topics/langraph/INSTRUCTIONS.md`
 - RAG: `topics/rag/INSTRUCTIONS.md`
 - FastAPI: `topics/fastapi/INSTRUCTIONS.md`
 - UI: `topics/ui/INSTRUCTIONS.md`
@@ -38,6 +40,7 @@ Use this file as the single entrypoint for topic and framework discovery.
 
 ## 5) Template Locations
 - Agent templates: `topics/agent/frameworks/langchain/templates/`
+- LangGraph templates: `topics/langraph/templates/`
 - RAG templates: `topics/rag/shared/`
 - FastAPI templates: `topics/fastapi/templates/`
 - Prompt templates: `topics/<topic>/prompts/`
@@ -47,6 +50,7 @@ Use this file as the single entrypoint for topic and framework discovery.
 
 ## 6) Testing Templates
 - LangChain tests: `topics/agent/frameworks/langchain/tests/`
+- LangGraph tests: `topics/langraph/tests/`
 - RAG tests: `topics/rag/shared/`
 - Framework test plans: `topics/*/frameworks/*/tests/`
 - MCP test plans: `topics/mcp/tests/`

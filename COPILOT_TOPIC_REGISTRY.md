@@ -19,6 +19,12 @@ Use `instructions/TABLE_OF_CONTENTS.md` as the entrypoint.
   - LangChain: `topics/agent/frameworks/langchain/`
   - Google ADK: `topics/agent/frameworks/google-adk/`
 
+### LangGraph
+- Skill: `topics/langraph/SKILL.md`
+- Instructions: `topics/langraph/INSTRUCTIONS.md`
+- Templates: `topics/langraph/templates/`
+- Tests: `topics/langraph/tests/`
+
 ### RAG
 - Skill: `topics/rag/SKILL.md`
 - Instructions: `topics/rag/INSTRUCTIONS.md`
