@@ -1,0 +1,84 @@
+{
+  "id": "sample-demo",
+  "title": "Sample Demo",
+  "audience": "investor",
+  "objective": "Show a deterministic product outcome",
+  "coreMessage": "The system turns fragmented product state into a useful answer",
+  "startUrl": "/login?demo=1",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "seedProfile": "sample_demo_workspace",
+  "recording": {
+    "mode": "screenshot-plus-video",
+    "outputDir": "demo/output/sample-demo/raw"
+  },
+  "steps": [
+    {
+      "id": "login",
+      "type": "login",
+      "email": "demo@example.com",
+      "passwordEnv": "DEMO_PASSWORD"
+    },
+    {
+      "id": "open-chat",
+      "type": "navigate",
+      "url": "/app/chat"
+    },
+    {
+      "id": "ask-question",
+      "type": "type",
+      "selector": "[data-testid='chat-input']",
+      "text": "Where is my class information?",
+      "delayMs": 40
+    },
+    {
+      "id": "submit",
+      "type": "click",
+      "selector": "[data-testid='send-button']"
+    },
+    {
+      "id": "wait-answer",
+      "type": "waitForText",
+      "text": "Thursday 18:00",
+      "timeoutMs": 10000
+    },
+    {
+      "id": "capture-result",
+      "type": "screenshot",
+      "name": "result-final"
+    }
+  ],
+  "captions": [
+    {
+      "atStep": "ask-question",
+      "text": "Important details are often buried across apps and messages."
+    },
+    {
+      "atStep": "wait-answer",
+      "text": "The assistant finds the answer across fragmented memory."
+    }
+  ],
+  "highlights": [
+    {
+      "atStep": "wait-answer",
+      "selector": "[data-testid='answer-card']",
+      "style": "zoom"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "investor-landscape",
+      "format": "mp4",
+      "aspectRatio": "16:9",
+      "durationSec": 60
+    },
+    {
+      "name": "social-vertical",
+      "format": "mp4",
+      "aspectRatio": "9:16",
+      "durationSec": 20
+    }
+  ]
+}

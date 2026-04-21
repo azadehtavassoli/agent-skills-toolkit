@@ -1,0 +1,10 @@
+[
+  {
+    "atStep": "ask-question",
+    "text": "Important details are often buried across apps and messages."
+  },
+  {
+    "atStep": "wait-answer",
+    "text": "The assistant finds the answer across fragmented memory."
+  }
+]

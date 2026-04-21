@@ -1,0 +1,37 @@
+{
+  "workspace": "sample_demo_workspace",
+  "users": [
+    {
+      "name": "Elena",
+      "email": "demo@example.com"
+    }
+  ],
+  "connectedSources": [
+    {
+      "type": "telegram",
+      "connected": true,
+      "mode": "seeded"
+    },
+    {
+      "type": "email",
+      "connected": true,
+      "mode": "seeded"
+    }
+  ],
+  "messages": [
+    {
+      "source": "telegram",
+      "text": "Your gym class is on Thursday at 18:00 at Fitness Studio East."
+    },
+    {
+      "source": "email",
+      "text": "Reminder: your Thursday class is confirmed."
+    }
+  ],
+  "expectedFacts": [
+    {
+      "key": "gym_class_time",
+      "value": "Thursday 18:00"
+    }
+  ]
+}
